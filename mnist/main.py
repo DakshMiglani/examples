@@ -78,6 +78,7 @@ def train(epoch):
     for batch_idx, (data, target) in enumerate(train_loader):
         if args.cuda:
             data, target = data.cuda(), target.cuda()
+        print(data.shape, target.shape)
         data, target = Variable(data), Variable(target)
         optimizer.zero_grad()
         output = model(data)
